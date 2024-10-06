@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tanar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body id="new-body" class="rtl">
+
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="logo1.jpg" alt="Tanar Real-Estate" title="logo" />
+                <h2>Tanar Real-Estate <span>.</span></h2>
+            </div>
+            <div class="nav-link theme-toggle">
+                <i class="fa-solid fa-sun" onclick="modeFunc()"></i>
+                <i class="fa-solid fa-moon" onclick="modeFunc()"></i>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="Contact">
+            <div class="container">
+                <div class="form-wrapper">
+                    <div class="contact-heading">
+                        <img class="new-temp-LightLogo" src="logo1.jpg" alt="شركة تنار العقارية">
+                        <h1>حقق حلمك<span>.</span></h1>
+                        <p class="text">حقق حلمك بامتلاك منزل العمر مع حلولنا المتنوعه في التمويل العقاري</p>
+                    </div>
+                    <form method="post" class="contact-form">
+                        <div class="input-wrap">
+                            <input type="text" class="contact-input" autocomplete="off" name="fullName" required />
+                            <label>الاسم الكامل</label>
+                        </div>
+                        <div class="input-wrap">
+                            <input class="contact-input" autocomplete="off" maxlength="10" id="salary" required type="tel" name="salary" />
+                            <label>الراتب</label>
+                        </div>
+                        <div class="input-wrap">
+                            <input id="phoneNumber" class="contact-input" maxlength="10" autocomplete="off" required type="tel" name="phoneNo" />
+                            <label>رقم الهاتف</label>
+                        </div>
+                        <div class="input-wrap">
+                            <select name="work" class="contact-input" required>
+                                <option value="0" hidden> </option>
+                                <option value="مدني">مدني</option>
+                                <option value="عسكري">عسكري</option>
+                                <option value="قطاع خاص">قطاع خاص</option>
+                            </select>
+                            <label>قطاع العمل</label>
+                        </div>
+                        <div class="input-wrap">
+                            <select name="bankName" class="contact-input" required>
+                                <option value="0" hidden> </option>
+                                <option value="الراجحي">الراجحي</option>
+                                <option value="الاهلي">الاهلي</option>
+                                <option value="الانماء">الانماء</option>
+                                <option value="الجزيرة">الجزيرة</option>
+                                <option value="البلاد">البلاد</option>
+                                <option value="ساب">ساب</option>
+                                <option value="السعودي الفرنسي">السعودي الفرنسي</option>
+                                <option value="الرياض">الرياض</option>
+                                <option value="العربي الوطني">العربي الوطني</option>
+                                <option value="الخليج الدولي">الخليج الدولي</option>
+                            </select>
+                            <label>البنك</label>
+                        </div>
+                        <div class="contact-button">
+                            <input type="submit" name="submit" value="ارسال" class="btn" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+        
+        <!-- WhatsApp Icon -->
+        <a href="https://wa.me/message/MMHXZBCJCJQNP1" class="whatsapp-chat" target="_blank">
+            <img src="whatsapp-icon.png" alt="Chat with us on WhatsApp" />
+        </a>
+    </main>
+
+</body>
+</html>
