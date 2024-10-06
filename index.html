@@ -6,6 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tanar</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .phone-input {
+            display: flex;
+            align-items: center;
+        }
+        .country-code {
+            width: 80px; /* Adjust width as needed */
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            border-radius: 4px 0 0 4px;
+            text-align: center;
+            margin-right: -1px; /* To remove the gap between inputs */
+        }
+        .contact-input {
+            flex: 1;
+            border-radius: 0 4px 4px 0;
+        }
+    </style>
 </head>
 
 <body id="new-body" class="rtl">
@@ -42,7 +60,9 @@
                             <label>الراتب</label>
                         </div>
                         <div class="input-wrap">
-                            <input id="phoneNumber" value= "+966" class="contact-input" maxlength="14" autocomplete="off" required type="tel" name="phoneNo" />
+                            
+                                <input id="phoneNumber" value="+966" class="contact-input" maxlength="14" autocomplete="off" required type="tel" name="phoneNo" />
+
                             <label>رقم الهاتف</label>
                         </div>
                         <div class="input-wrap">
@@ -84,20 +104,20 @@
         </a>
     </main>
 
-     <script>
+    <script>
         function sendWhatsAppMessage(event) {
             event.preventDefault(); // Prevent form submission
 
             // Gather user input
             const fullName = document.querySelector('input[name="fullName"]').value;
             const salary = document.querySelector('input[name="salary"]').value;
-            const countryCode = document.getElementById('countryCode').value;
+
             const phoneNumber = document.getElementById('phoneNumber').value;
             const work = document.querySelector('select[name="work"]').value;
             const bankName = document.querySelector('select[name="bankName"]').value;
 
             // Create the message content
-            const message = `Name: ${fullName}\nSalary: ${salary}\nPhone Number: ${countryCode}${phoneNumber}\nWork Sector: ${work}\nBank: ${bankName}\n\nThanks for texting, we would love to assist you!`;
+            const message = `Name: ${fullName}\nSalary: ${salary}\nPhone Number: ${phoneNumber}\nWork Sector: ${work}\nBank: ${bankName}\n\nThanks for texting, we would love to assist you!`;
 
             // Construct the WhatsApp link using the provided sender link
             const senderLink = "https://wa.me/message/MMHXZBCJCJQNP1";
