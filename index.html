@@ -42,7 +42,7 @@
                             <label>الراتب</label>
                         </div>
                         <div class="input-wrap">
-                            <input id="phoneNumber" class="contact-input" maxlength="14" autocomplete="off" required type="tel" name="phoneNo" />
+                            <input id="phoneNumber" value= "+966" class="contact-input" maxlength="14" autocomplete="off" required type="tel" name="phoneNo" />
                             <label>رقم الهاتف</label>
                         </div>
                         <div class="input-wrap">
@@ -84,15 +84,24 @@
         </a>
     </main>
 
-    <script>
+     <script>
         function sendWhatsAppMessage(event) {
             event.preventDefault(); // Prevent form submission
 
+            // Gather user input
+            const fullName = document.querySelector('input[name="fullName"]').value;
+            const salary = document.querySelector('input[name="salary"]').value;
+            const countryCode = document.getElementById('countryCode').value;
             const phoneNumber = document.getElementById('phoneNumber').value;
-            const message = "Hello, I am interested in your services. My number is +966559109217."; // Customize your message here
+            const work = document.querySelector('select[name="work"]').value;
+            const bankName = document.querySelector('select[name="bankName"]').value;
 
-            // Construct the WhatsApp link
-            const whatsappURL = `https://wa.me/message/MMHXZBCJCJQNP1 ?text=${encodeURIComponent(message)}`;
+            // Create the message content
+            const message = `Name: ${fullName}\nSalary: ${salary}\nPhone Number: ${countryCode}${phoneNumber}\nWork Sector: ${work}\nBank: ${bankName}\n\nThanks for texting, we would love to assist you!`;
+
+            // Construct the WhatsApp link using the provided sender link
+            const senderLink = "https://wa.me/message/MMHXZBCJCJQNP1";
+            const whatsappURL = `${senderLink}?text=${encodeURIComponent(message)}`;
 
             // Redirect to WhatsApp
             window.open(whatsappURL, '_blank');
