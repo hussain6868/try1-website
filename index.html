@@ -14,7 +14,7 @@
         <div class="container">
             <div class="logo">
                 <img src="logo1.jpg" alt="Tanar Real-Estate" title="logo" />
-                <h2>Tanar Real-Estate </h2>
+                <h2>Tanar Real-Estate <span>.</span></h2>
             </div>
             <div class="nav-link theme-toggle">
                 <i class="fa-solid fa-sun" onclick="modeFunc()"></i>
@@ -32,7 +32,7 @@
                         <h1>حقق حلمك<span>.</span></h1>
                         <p class="text">حقق حلمك بامتلاك منزل العمر مع حلولنا المتنوعه في التمويل العقاري</p>
                     </div>
-                    <form method="post" class="contact-form">
+                    <form id="contactForm" class="contact-form" onsubmit="sendWhatsAppMessage(event)">
                         <div class="input-wrap">
                             <input type="text" class="contact-input" autocomplete="off" name="fullName" required />
                             <label>الاسم الكامل</label>
@@ -83,6 +83,21 @@
             <img src="whatsapp-icon.png" alt="Chat with us on WhatsApp" />
         </a>
     </main>
+
+    <script>
+        function sendWhatsAppMessage(event) {
+            event.preventDefault(); // Prevent form submission
+
+            const phoneNumber = document.getElementById('phoneNumber').value;
+            const message = "Hello, I am interested in your services."; // Customize your message here
+
+            // Construct the WhatsApp link
+            const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+
+            // Redirect to WhatsApp
+            window.open(whatsappURL, '_blank');
+        }
+    </script>
 
 </body>
 </html>
